@@ -1,7 +1,13 @@
 import CheckStatus from '../components/CheckStatus';
+import Navigation from '../components/Navigation';
 
-const Categories = () => (
-  <CheckStatus />
-);
+function Categories() {
+  return (
+    <>
+      <Navigation />
+      <CheckStatus />
+    </>
+  );
+}
 
 export default Categories;

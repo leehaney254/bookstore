@@ -1,5 +1,6 @@
 import Book from '../components/Book';
 import Form from '../components/Form';
+import Navigation from '../components/Navigation';
 
 const books = [
   {
@@ -29,16 +30,19 @@ const books = [
   },
 ];
 
-const BooksPage = () => {
+function BooksPage() {
   const library = books.map((book) => (
     <Book key={book.id} title={book.title} author={book.author} />
   ));
   return (
-    <main>
-      {library}
-      <Form />
-    </main>
+    <>
+      <Navigation />
+      <main>
+        {library}
+        <Form />
+      </main>
+    </>
   );
-};
+}
 
 export default BooksPage;
