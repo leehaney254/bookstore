@@ -1,15 +1,18 @@
 import './Form.css';
 
 const Form = () => (
-  <form>
-    <label htmlFor="title" className="formlabel">
-      <input type="text" id="title" name="title" placeholder="Enter the books title" />
-    </label>
-    <label htmlFor="author" className="formlabel">
-      <input type="text" id="author" name="author" placeholder="Enter the books author" />
-    </label>
-    <button type="submit">Add Book</button>
-  </form>
+  <>
+    <h2 className="formlabel">Add New book</h2>
+    <form>
+      <label htmlFor="title" className="formlabel">
+        <input type="text" id="title" name="title" placeholder="Title" />
+      </label>
+      <label htmlFor="author" className="formlabel">
+        <input type="text" id="author" name="author" placeholder="Author" />
+      </label>
+      <button type="submit">Add Book</button>
+    </form>
+  </>
 );
 
 export default Form;
