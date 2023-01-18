@@ -1,5 +1,7 @@
+import CheckStatus from '../components/CheckStatus';
+
 const Categories = () => (
-  <h1>Hello! Wolcome to the category page.</h1>
+  <CheckStatus />
 );
 
 export default Categories;
