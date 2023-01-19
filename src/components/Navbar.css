@@ -1,0 +1,17 @@
+.header {
+  margin-left: 1rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navlist {
+  list-style: none;
+}
+
+.navlink {
+  text-decoration: none;
+}
