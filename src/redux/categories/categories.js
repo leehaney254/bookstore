@@ -9,11 +9,12 @@ const checkStatus = () => (
   }
 );
 
+const info = 'Under Construction';
 // Define reducer
 const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHECKSTATUS:
-      return 'Under Construction';
+      return info;
     default:
       return state;
   }

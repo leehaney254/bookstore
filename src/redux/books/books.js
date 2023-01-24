@@ -4,12 +4,10 @@ const REMOVEBOOK = 'REMOVE_BOOK';
 const initialState = [];
 
 // Actions for adding and removing books
-const addBook = (title, author, id) => (
+const addBook = (book) => (
   {
     type: ADDBOOk,
-    title,
-    author,
-    id,
+    payload: book,
   }
 );
 
@@ -26,19 +24,10 @@ const BooksReducer = (state = initialState, action) => {
     case ADDBOOk:
       return [
         ...state,
-        {
-          title: action.title,
-          author: action.author,
-          id: action.id,
-        },
+        action.payload,
       ];
     case REMOVEBOOK:
-      return state.map((book) => {
-        if (book.id === action.id) {
-          return undefined;
-        }
-        return book;
-      });
+      return [...state.filter((book) => book !== action.payload)];
     default:
       return state;
   }
