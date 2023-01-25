@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuid } from 'uuid';
+import { addBook } from '../redux/books/books';
 import './Form.css';
 
 const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [formIsNotValid, setformIsNotValid] = useState(false);
+  const dispatch = useDispatch();
 
   const titleChangeHandler = (e) => {
     setTitle(e.target.value);
@@ -22,8 +26,15 @@ const Form = () => {
       return;
     }
     setformIsNotValid(false);
-    console.log(title);
-    console.log(author);
+    const payload = {
+      id: uuid(),
+      title,
+      author,
+    };
+
+    dispatch(addBook(payload));
+    setAuthor('');
+    setTitle('');
   };
 
   return (
