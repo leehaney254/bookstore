@@ -6,7 +6,7 @@ import Navigation from '../components/Navigation';
 function BooksPage() {
   const books = useSelector((state) => state.BooksReducer);
   const library = books.map((book) => (
-    <Book key={book.id} title={book.title} author={book.author} />
+    <Book key={book.id} id={book.id} title={book.title} author={book.author} />
   ));
   return (
     <>

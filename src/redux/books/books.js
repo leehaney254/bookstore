@@ -1,5 +1,8 @@
 import { v4 as uuid } from 'uuid';
 
+// Define constants
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const initialState = [
   {
     id: uuid(),
@@ -28,10 +31,6 @@ const initialState = [
   },
 ];
 
-// Define constants
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
-
 // Actions for adding and removing books
 const addBook = (book) => (
   {
@@ -56,7 +55,7 @@ const BooksReducer = (bookState = initialState, action) => {
         action.payload,
       ];
     case REMOVE_BOOK:
-      return [...bookState.filter((book) => book !== action.payload)];
+      return [...bookState.filter((item) => item.id !== action.id)];
     default:
       return bookState;
   }
