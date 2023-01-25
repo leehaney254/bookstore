@@ -14,11 +14,11 @@ function Book(props) {
 
   return (
     <div id="book">
-      Title:
+      <span className="bookSpace">Title:</span>
       {title}
-      by:
+      <span className="bookSpace">by:</span>
       {author}
-      <button id={id} type="button" onClick={removeChangeHandler}>Remove</button>
+      <button id={id} className="bookSpace" type="button" onClick={removeChangeHandler}>Remove</button>
     </div>
   );
 }

@@ -5,9 +5,15 @@ import Navigation from '../components/Navigation';
 
 function BooksPage() {
   const books = useSelector((state) => state.BooksReducer);
-  const library = books.map((book) => (
-    <Book key={book.id} id={book.id} title={book.title} author={book.author} />
-  ));
+  let library = '';
+  if (books.length === 0) {
+    library = <h1>There are no books to show</h1>;
+  } else {
+    library = books.map((book) => (
+      <Book key={book.id} id={book.id} title={book.title} author={book.author} />
+    ));
+  }
+
   return (
     <>
       <Navigation />

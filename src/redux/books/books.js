@@ -6,28 +6,28 @@ const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const initialState = [
   {
     id: uuid(),
-    title: ' The Catcher in the Rye ',
-    author: ' J.D. Salinger ',
+    title: 'The Catcher in the Rye',
+    author: 'J.D. Salinger',
   },
   {
     id: uuid(),
-    title: ' To Kill a Mockingbird ',
-    author: ' Harper Lee ',
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
   },
   {
     id: uuid(),
-    title: ' The Great Gatsby ',
-    author: ' F. Scott Fitzgerald ',
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
   },
   {
     id: uuid(),
-    title: ' One Hundred Years of Solitude ',
+    title: 'One Hundred Years of Solitude',
     author: ' Gabriel Garcia Marquez ',
   },
   {
     id: uuid(),
-    title: ' The Lord of the Rings ',
-    author: ' J.R.R. Tolkien ',
+    title: 'The Lord of the Rings',
+    author: 'J.R.R. Tolkien',
   },
 ];
 
