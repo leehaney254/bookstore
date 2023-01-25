@@ -1,3 +1,8 @@
 .formlabel {
   margin: 1rem;
 }
+
+#warning {
+  color: red;
+  margin-left: 1rem;
+}
