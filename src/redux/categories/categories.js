@@ -1,6 +1,6 @@
 // Define constants
 const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
-const initialState = [];
+const initialState = '';
 
 // Define actions
 const checkStatus = () => (
