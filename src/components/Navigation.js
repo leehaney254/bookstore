@@ -16,7 +16,7 @@ const Navigation = () => (
         </li>
       </ul>
     </nav>
-    <img id="profile" src={profile} alt="profile" />
+    <button type="button" className="icon-button"><img src={profile} alt="profile" /></button>
   </header>
 );
 

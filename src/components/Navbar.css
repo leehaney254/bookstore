@@ -37,3 +37,12 @@
   letter-spacing: 1.9px;
   text-decoration: none;
 }
+
+.icon-button {
+  cursor: pointer;
+  width: 2.813rem;
+  height: 2.813rem;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}

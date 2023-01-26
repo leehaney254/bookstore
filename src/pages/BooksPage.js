@@ -22,6 +22,7 @@ function BooksPage() {
         <div id="books">
           {library}
         </div>
+        <div className="horizontal-divider" />
         <Form />
       </main>
     </>
