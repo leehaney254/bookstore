@@ -9,9 +9,10 @@
 
 #logo {
   text-decoration: none;
-  color: #0071c5;
-  font-size: 2rem;
-  font-weight: 600;
+  color: #0290ff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
 }
 
 #profile {
@@ -31,5 +32,8 @@
 }
 
 .navlink {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
   text-decoration: none;
 }

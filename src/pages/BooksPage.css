@@ -1,0 +1,12 @@
+#bookSpacing {
+  padding: 4%;
+}
+
+#books {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.938rem;
+  gap: 0.938rem;
+}
