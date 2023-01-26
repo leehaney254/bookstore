@@ -4,10 +4,10 @@ import './Navbar.css';
 import profile from '../assets/profile.png';
 
 const Navigation = () => (
-  <header className="header">
-    <nav className="nav">
+  <header>
+    <nav className="nav-bar">
       <NavLink id="logo" to="/">Bookstore CMS</NavLink>
-      <ul className="nav">
+      <ul className="nav-links">
         <li className="navlist">
           <NavLink className="navlink" to="/">BOOKS</NavLink>
         </li>
@@ -15,8 +15,8 @@ const Navigation = () => (
           <NavLink className="navlink" to="/categories">CATEGORIES</NavLink>
         </li>
       </ul>
+      <button type="button" className="icon-button"><img src={profile} alt="profile" /></button>
     </nav>
-    <button type="button" className="icon-button"><img src={profile} alt="profile" /></button>
   </header>
 );
 

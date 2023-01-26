@@ -41,10 +41,10 @@ const Form = () => {
     <>
       <h2 id="formtitle">ADD NEW BOOK</h2>
       <form id="form" onSubmit={submitHandler}>
-        <label htmlFor="title">
+        <label htmlFor="title" className="formwidth">
           <input type="text" id="title" className="input" value={title} onChange={titleChangeHandler} name="title" placeholder="Book title" />
         </label>
-        <label htmlFor="author">
+        <label htmlFor="author" className="formwidth">
           <input type="text" id="author" className="input" value={author} onChange={authorChangeHandler} name="author" placeholder="Book author" />
         </label>
         <button className="primaryButton" type="submit">ADD BOOK</button>

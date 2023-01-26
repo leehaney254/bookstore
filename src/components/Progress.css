@@ -79,3 +79,16 @@
   letter-spacing: 0.5px;
   color: #fff;
 }
+
+@media only screen and (max-width: 768px) {
+  .progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .progress-divider {
+    display: none;
+    gap: 1rem;
+  }
+}

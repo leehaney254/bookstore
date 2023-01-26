@@ -1,10 +1,11 @@
-.header {
-  height: 5.8rem;
-  background-color: white;
+.nav-bar {
+  padding: 24px 4%;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 3rem;
+  grid-gap: 40px;
+  gap: 40px;
 }
 
 #logo {
@@ -21,10 +22,11 @@
   border-radius: 30px;
 }
 
-.nav {
+.nav-links {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  flex-grow: 1;
+  list-style-type: none;
+  gap: 40px;
 }
 
 .navlist {
@@ -32,10 +34,16 @@
 }
 
 .navlink {
+  opacity: 0.5;
   font-family: "Montserrat", sans-serif;
   font-size: 0.813rem;
+  color: #121212;
   letter-spacing: 1.9px;
   text-decoration: none;
+}
+
+.activelink {
+  opacity: 1;
 }
 
 .icon-button {
@@ -45,4 +53,11 @@
   border-radius: 50%;
   border: 1px solid #e8e8e8;
   background-color: #fff;
+}
+
+@media only screen and (max-width: 786px) {
+  .nav-links {
+    gap: 5px;
+    flex-direction: column;
+  }
 }

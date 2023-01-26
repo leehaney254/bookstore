@@ -9,7 +9,7 @@ const checkStatus = () => (
   }
 );
 
-const info = 'Under Construction';
+const info = 'Under construction';
 // Define reducer
 const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
