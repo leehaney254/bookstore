@@ -1,5 +1,23 @@
 .header {
-  margin-left: 1rem;
+  height: 5.8rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+}
+
+#logo {
+  text-decoration: none;
+  color: #0071c5;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#profile {
+  border: 0.5px solid #e1ebee;
+  padding: 0.5rem;
+  border-radius: 30px;
 }
 
 .nav {

@@ -1,9 +1,5 @@
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+#storeColor {
+  background-color: #f5f5f5;
+  width: 93%;
+  margin-top: 2.8rem;
 }
