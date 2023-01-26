@@ -39,15 +39,15 @@ const Form = () => {
 
   return (
     <>
-      <h2 className="formlabel">Add New book</h2>
-      <form onSubmit={submitHandler}>
-        <label htmlFor="title" className="formlabel">
-          <input type="text" id="title" value={title} onChange={titleChangeHandler} name="title" placeholder="Title" />
+      <h2 id="formtitle">ADD NEW BOOK</h2>
+      <form id="form" onSubmit={submitHandler}>
+        <label htmlFor="title" className="formwidth">
+          <input type="text" id="title" className="input" value={title} onChange={titleChangeHandler} name="title" placeholder="Book title" />
         </label>
-        <label htmlFor="author" className="formlabel">
-          <input type="text" id="author" value={author} onChange={authorChangeHandler} name="author" placeholder="Author" />
+        <label htmlFor="author" className="formwidth">
+          <input type="text" id="author" className="input" value={author} onChange={authorChangeHandler} name="author" placeholder="Book author" />
         </label>
-        <button type="submit">Add Book</button>
+        <button className="primaryButton" type="submit">ADD BOOK</button>
         {formIsNotValid && <div id="warning">Do not leave any empty fields</div>}
       </form>
     </>

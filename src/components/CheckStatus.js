@@ -12,13 +12,13 @@ function CheckStatus() {
   };
 
   if (status === '') {
-    display = <button id="checkStatus" onClick={statusChangeHandler} type="button">CheckStatus</button>;
+    display = <button className="primaryButton" onClick={statusChangeHandler} type="button">Check Status</button>;
   } else {
-    display = <>{status}</>;
+    display = <h1>{status}</h1>;
   }
 
   return (
-    <div>
+    <div id="container">
       {display}
     </div>
   );

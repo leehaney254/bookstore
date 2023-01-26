@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import Book from '../components/Book';
 import Form from '../components/Form';
 import Navigation from '../components/Navigation';
+import './BooksPage.css';
 
 function BooksPage() {
   const books = useSelector((state) => state.BooksReducer);
@@ -17,8 +18,11 @@ function BooksPage() {
   return (
     <>
       <Navigation />
-      <main>
-        {library}
+      <main id="bookSpacing">
+        <div id="books">
+          {library}
+        </div>
+        <div className="horizontal-divider" />
         <Form />
       </main>
     </>

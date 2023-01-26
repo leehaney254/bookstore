@@ -1,0 +1,19 @@
+#bookSpacing {
+  padding: 4%;
+}
+
+#books {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.938rem;
+  gap: 0.938rem;
+}
+
+.horizontal-divider {
+  height: 0.125rem;
+  background-color: #e8e8e8;
+  width: 100%;
+  margin: 2.5rem 0 1.813rem;
+}
