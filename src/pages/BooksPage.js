@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Book from '../components/Book';
 import Form from '../components/Form';
 import Navigation from '../components/Navigation';
-import { getAllBooks } from '../redux/apis/api';
+import { getBooks } from '../redux/apis/api';
 import './BooksPage.css';
 
 function BooksPage() {
@@ -12,7 +12,7 @@ function BooksPage() {
   // testing new library
 
   useEffect(() => {
-    dispatch(getAllBooks());
+    dispatch(getBooks());
   }, [dispatch]);
 
   // ends here
