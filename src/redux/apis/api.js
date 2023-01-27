@@ -21,6 +21,18 @@ const getBooks = createAsyncThunk('app/getBooks', async () => {
   return books;
 });
 
+const addBookAPI = createAsyncThunk('app/addBook', async (payload) => {
+  axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tiOwyGbvAThq09f5x6Ai/books',
+    payload).then((res) => console.log(res));
+});
+
+const deleteBookAPI = createAsyncThunk('app/deleteBook', async (id) => {
+  const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tiOwyGbvAThq09f5x6Ai/books/';
+  const postUrl = baseUrl + id;
+  axios.delete(postUrl)
+    .then((response) => console.log(response.data));
+});
+
 const bookSlice = createSlice({
   name: 'book',
   initialState,
@@ -40,4 +52,4 @@ const bookSlice = createSlice({
 });
 
 export default bookSlice;
-export { getBooks };
+export { getBooks, addBookAPI, deleteBookAPI };

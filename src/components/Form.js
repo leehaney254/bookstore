@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { addBook } from '../redux/books/books';
+import { addBookAPI } from '../redux/apis/api';
 import './Form.css';
 
 const Form = () => {
@@ -27,12 +28,14 @@ const Form = () => {
     }
     setformIsNotValid(false);
     const payload = {
-      id: uuid(),
+      item_id: uuid(),
       title,
       author,
+      category: 'Fiction',
     };
 
     dispatch(addBook(payload));
+    dispatch(addBookAPI(payload));
     setAuthor('');
     setTitle('');
   };
