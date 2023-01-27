@@ -1,8 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
 import Progress from './Progress';
+import { deleteBookAPI } from '../redux/apis/api';
 import './Book.css';
 
 function Book(props) {
@@ -10,7 +10,7 @@ function Book(props) {
   const dispatch = useDispatch();
 
   const removeChangeHandler = (e) => {
-    dispatch(removeBook(e.target.id));
+    dispatch(deleteBookAPI(e.target.id));
   };
 
   return (
