@@ -12,7 +12,7 @@ const getBooks = createAsyncThunk('app/getBooks', async () => {
   const books = Object.entries(data).map(([key, value]) => {
     const { title, category, author } = value[0];
     return {
-      Id: key,
+      id: key,
       title,
       category,
       author,
