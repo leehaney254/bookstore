@@ -1,8 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
 import Progress from './Progress';
+import { removeBook } from '../redux/apis/api';
 import './Book.css';
 
 function Book(props) {
