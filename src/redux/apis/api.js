@@ -1,55 +1,66 @@
-/* eslint-disable no-param-reassign */
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const initialState = {
-  books: [],
-  loading: false,
+const ADD = 'ADD';
+const REMOVE = 'REMOVE';
+const GET_BOOKS = 'GET_BOOKS';
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tiOwyGbvAThq09f5x6Ai/books';
+
+const getAllBooks = createAsyncThunk(
+  GET_BOOKS,
+  async (post, { dispatch }) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    const books = Object.keys(data).map((id) => ({
+      ...data[id][0],
+      item_id: id,
+    }));
+    dispatch({
+      type: GET_BOOKS,
+      payload: books,
+    });
+  },
+);
+
+const addBook = createAsyncThunk(
+  ADD,
+  async (book, { dispatch }) => {
+    await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(book),
+    });
+    dispatch({
+      type: ADD,
+      payload: book,
+    });
+  },
+);
+
+const removeBook = createAsyncThunk(
+  REMOVE,
+  async (id, { dispatch }) => {
+    await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+    });
+    dispatch({
+      type: REMOVE,
+      payload: id,
+    });
+  },
+);
+
+const bookReducer = (state = [], action) => {
+  switch (action.type) {
+    case GET_BOOKS:
+      return action.payload;
+    case ADD:
+      return [...state, action.payload];
+    case REMOVE:
+      return [...state.filter((book) => book.item_id !== action.payload)];
+    default:
+      return state;
+  }
 };
 
-const getBooks = createAsyncThunk('app/getBooks', async () => {
-  const { data } = await axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tiOwyGbvAThq09f5x6Ai/books');
-  const books = Object.entries(data).map(([key, value]) => {
-    const { title, category, author } = value[0];
-    return {
-      id: key,
-      title,
-      category,
-      author,
-    };
-  });
-  return books;
-});
-
-const addBookAPI = createAsyncThunk('app/addBook', async (payload) => {
-  axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tiOwyGbvAThq09f5x6Ai/books',
-    payload).then((res) => console.log(res));
-});
-
-const deleteBookAPI = createAsyncThunk('app/deleteBook', async (id) => {
-  const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tiOwyGbvAThq09f5x6Ai/books/';
-  const postUrl = baseUrl + id;
-  axios.delete(postUrl)
-    .then((response) => console.log(response.data));
-});
-
-const bookSlice = createSlice({
-  name: 'book',
-  initialState,
-  reducers: {},
-  extraReducers: {
-    [getBooks.pending]: (state) => {
-      state.loading = true;
-    },
-    [getBooks.fulfilled]: (state, action) => {
-      state.loading = false;
-      state.books = action.payload;
-    },
-    [fetch.rejected]: (state) => {
-      state.loading = false;
-    },
-  },
-});
-
-export default bookSlice;
-export { getBooks, addBookAPI, deleteBookAPI };
+export { getAllBooks, addBook, removeBook };
+export default bookReducer;

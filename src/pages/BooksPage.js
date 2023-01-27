@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import Book from '../components/Book';
 import Form from '../components/Form';
 import Navigation from '../components/Navigation';
-import { getBooks } from '../redux/apis/api';
+import { getAllBooks } from '../redux/apis/api';
 import './BooksPage.css';
 
 function BooksPage() {
-  const { books } = useSelector((state) => state.books);
-  // testing new library
   const dispatch = useDispatch();
+  const books = useSelector((state) => state.books);
+  // testing new library
+
   useEffect(() => {
-    dispatch(getBooks());
+    dispatch(getAllBooks());
   }, [dispatch]);
 
   // ends here
@@ -20,7 +21,7 @@ function BooksPage() {
     library = <h1>Loading...</h1>;
   } else {
     library = books.map((book) => (
-      <Book key={book.id} id={book.id} title={book.title} author={book.author} />
+      <Book key={book.item_id} id={book.item_id} title={book.title} author={book.author} />
     ));
   }
 

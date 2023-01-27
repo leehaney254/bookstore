@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
-import { addBook } from '../redux/books/books';
-import { addBookAPI } from '../redux/apis/api';
+import { addBook } from '../redux/apis/api';
 import './Form.css';
 
 const Form = () => {
@@ -35,7 +34,6 @@ const Form = () => {
     };
 
     dispatch(addBook(payload));
-    dispatch(addBookAPI(payload));
     setAuthor('');
     setTitle('');
   };
